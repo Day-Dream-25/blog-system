@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <h2>you login as:{{ user.username }}</h2>
+
+
+
+
+        <a href="{% url 'updateasupervisor' object.id %}"> <button type="button"  id="submit" class="btn btn-primary">profile
+        </button></a>
+
+
+        <a href="{% url 'updateuser' object.id %}"><button type="button" id="button" class="btn btn-primary">User profile
+        </button></a>
+
+        <br/>
+        <br/>
+
+        <a href="{% url 'shopdetaillist' object.id %}"> <button type="button" id="button1" class="btn btn-primary">Shop Detail
+        </button></a>
+
+
+        <a href="{% url 'cleanerlist' object.id %}"><button type="button" id="button2" class="btn btn-primary">cleaner
+        </button></a>
+
+
+        <a href="{% url 'attenddencelist' object.id %}"><button type="button" id="button7" class="btn btn-primary">attendence record
+        </button></a>
+
+
+        <a href="{% url 'acasupervisor' object.id%}"><button type="button" class="btn btn-primary">Assign clener to shop
+        </button></a>
+
+
+        <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger">logout
+        </button></a>
+    <br/>
+
+    <br/>
+
+
+
+{%endblock content%}

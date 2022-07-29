@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<body>
+
+    <form action="" method="post" id="frm" >
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <h3>assign cleaner group list : </h3>
+
+        <br/>
+
+        <table id="example" class="table table-striped table-dark" style="width:100%">
+
+    <thead>
+    <tr>
+
+        <th scope="col"> ass_supervisor </th>
+        <th scope="col"> cleaner_group</th>
+        <th scope="col"> date</th>
+        <th scope="col"> assign_status</th>
+
+    </tr>
+
+    </thead>
+        <tbody>
+        <tr>
+            {% for object in object_list %}
+
+            <th>{{ object.ass_supervisor }}</th>
+            <th>{{ object.cleaner_group }}</th>
+            <th>{{ object.date }}</th>
+            <th>{{ object.assign_status }}</th>
+        </tr>
+       </tbody>
+         {% endfor %}
+    </table>
+
+</form>
+</body>
+{%endblock content%}
+
+{% block js_content %}
+
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+  {% endblock js_content %}

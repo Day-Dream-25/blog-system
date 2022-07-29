@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <form action="" method="post" id="frm" >
+        {% csrf_token %}
+        <h2>shop details</h2>
+
+        <br/>
+
+        <table id="example" class="table table-striped table-dark" style="width:100%">
+
+    <thead>
+    <tr>
+
+        <th scope="col"> name</th>
+        <th scope="col"> update</th>
+        <th scope="col"> delete</th>
+
+    </tr>
+    </thead>
+        <tbody>
+        <tr>
+        {% for object in object_list %}
+
+        <th>{{ object.name }}</th>
+
+
+         <th>
+        <a href="{% url 'shopworkerupdate' object.id %}"><button type="button" class="btn btn-primary" >
+            update </button> </a>
+        </th>
+
+
+         <th>
+        <a href="{% url 'shopworkerdelete' object.id %}"><button type="button" class="btn btn-danger" >
+            delete </button> </a>
+        </th>
+
+        </tr>
+       </tbody>
+         {% endfor %}
+    </table>
+
+          <a href="{% url 'shopworker' %}"><button type="button" class="btn btn-success" >
+        add shopworker </button> </a>
+
+
+
+</form>
+
+
+{% endblock content %}
+
+{% block js_content %}
+
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+} );
+</script>
+  {% endblock js_content %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+   <h3>you login as supervisor:{{ user.username }}</h3>
+
+
+    <h4> name:{{ object.name }}</h4>
+
+    <br/>
+
+        <a href="{% url 'updatesupervisor' object.id %}"><button type="button" class="btn btn-primary"  id="submit">
+            profile</button></a>
+
+
+        <a href="{% url 'updateuser' object.id %}">  <button type="button" id="button" class="btn btn-primary" >
+            User profile</button></a>
+
+    <br/>
+    <br/>
+
+
+        <a href="{% url 'asupervisorlist' object.id %}"><button type="button" class="btn btn-primary" >
+            assistantsupervisor</button></a>
+
+
+        <a href="{% url 'cleanergrouplist' object.id %}"><button type="button" class="btn btn-primary" >cleaner group
+        </button></a>
+
+
+        <a href="{% url 'assigncleanerlist' %}"><button type="button" class="btn btn-primary" >Assign cleaner group list
+        </button></a>
+
+
+        <a href="{% url 'acsupervisor' object.id %}"><button type="button" id="button5" class="btn btn-primary" >assign cleaner group
+        </button></a>
+
+
+        <a href="{% url 'acsupervisoelist'  %}"><button type="button" id="button8" class="btn btn-primary" >attendence record list
+        </button></a>
+
+
+        <a href="{% url 'logout' %}"><button type="button" class="btn btn-danger" >logout
+        </button></a>
+
+
+{%endblock content%}
