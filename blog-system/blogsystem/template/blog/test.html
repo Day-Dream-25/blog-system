@@ -1,0 +1,105 @@
+id_description<h1 align="center"> write your blog </h1>
+
+         <div class="row">
+             <div class="col-md-6">
+                 <div class="form-group">
+                    <label for="id_user">user</label>
+                    <select name="user" required="" id="id_user">
+                    <option value="" selected="">---------</option>
+                 </div>
+             </div>
+         </div>
+
+         <div class="row">
+             <div class="col-md-6">
+                 <div class="form-group">
+                    <label for="id_title">Title</label>
+                    <input type="text" class="form-control" name="title" maxlength="25" required="" id="id_title"  placeholder="Enter title">
+                 </div>
+             </div>
+             <div class="col-md-6">
+                 <div class="form-group">
+                    <label for="id_image">image</label>
+                    <input type="file" class="form-control" name="image" accept="image/*" id="id_image">
+                 </div>
+             </div>
+             <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_Date">Date</label>
+                    <input type="Date" name="Date" class="form-control"  id="id_Date" >
+                 </div>
+             </div>
+             <div class="col-md-6">
+                <div class="form-group">
+                    <label for="id_Date">description</label>
+                   <textarea name="description" cols="80" rows="4" class="form-control" placeholder="you can write your story here ..." maxlength="2000" required="" id="id_description" placeholder=" start your "></textarea>
+                 </div>
+             </div>
+             <div class="col-12 pb-4">
+                 <button type="submit" value="POST/" class="btn btn-primary">submit</button>
+            </div>
+         </div>
+     </form>
+</div>
+
+{%endblock content%}
+
+{% block js %}
+    <script>
+        function formatDate(date) {
+            const year = date.getFullYear().toString();
+            const month = (date.getMonth() + 101).toString().substring(1);
+            const day = (date.getDate() + 100).toString().substring(1);
+            return year + "-" + month + "-" + day;
+        }
+        window.addEventListener('DOMContentLoaded', (ev) => {
+            document.getElementById('id_Date').value = formatDate(new Date());
+        });
+    </script>
+{% endblock js %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <h1 align="center"> complete your profile</h1>
+
+         <div class="col-md-6" >
+
+         <div class="form-group">
+            <label for="id_gender" >gender</label>
+                 <select name="gender" required="" id="id_gender" class="form-control">
+                  <option value="" selected="">---------</option>
+                  <option value="Female" {% if object.gender =='Female' %} selected="selected"{% endif %}>Female</option>
+                  <option value="Male" {% if object.gender =='Male' %} selected="selected"{% endif %}>Male</option>
+                </select>
+         </div>
+
+                 <div class="form-group">
+                    <label for="id_dob">dob</label>
+                     <input value="{{object.dob}}" type="text" class="form-control" name="dob" id="id_dob" aria-describedby="emailHelp" placeholder="Enter password">
+                 </div>
+
+                 <div class="form-group">
+                    <label for="id_bio">bio</label>
+                    <input value="{{object.bio}}" type="text" class="form-control" name="bio" maxlength="150" id="id_bio" aria-describedby="emailHelp" placeholder="Enter password">
+                 </div>
+
+                 <div class="form-group">
+                    <label for="id_link">links</label>
+                     <input value="{{object.link}}" type="url" class="form-control" name="link" maxlength="100" id="id_link" aria-describedby="emailHelp" placeholder="Enter password">
+                 </div>

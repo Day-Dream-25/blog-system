@@ -1,0 +1,26 @@
+
+
+{% extends "base.html" %}
+{% block content %}
+<style>
+    body{
+        background-color: blanchedalmond;
+    }
+    .container{
+    background-color: white;
+    }
+</style>
+<div class="container">
+     <form action="" method="POST" id="frm" enctype="multipart/form-data">
+        {% csrf_token %}
+         {{ form.as_p }}
+
+
+             <div class="col-12 pb-4">
+                 <button type="submit" value="POST/" class="btn btn-primary">submit</button>
+            </div>
+
+     </form>
+</div>
+{% endblock content %}
+

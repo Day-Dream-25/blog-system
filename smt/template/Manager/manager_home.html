@@ -1,0 +1,17 @@
+<html>
+<head>
+    <title>
+        manager_home
+    </title>
+</head>
+<body>
+     <form action="" method="post" id="frm" >
+        You login as :-
+        {% if request.user.is_authenticated %}
+            {{ request.user.username }}
+        {% endif %}
+        {% csrf_token %}
+        {{ form.as_p }}
+     </form>
+</body>
+</html>

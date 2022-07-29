@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    body{
+        background-color: blanchedalmond;
+    }
+    .container{
+    background-color: white;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+    <h1 align="center"> Login </h1>
+
+     <form action="" method="POST" id="frm" enctype="multipart/form-data" >
+        {% csrf_token %}
+
+
+
+         <div class="col-md-6">
+
+         <div class="form-group">
+            <label for="id_username">User Name</label>
+                     <input type="text" class="form-control" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" aria-describedby="emailHelp" placeholder="Enter your name">
+         </div>
+
+         <div class="form-group">
+            <label for="id_password">Password</label>
+             <input type="password" class="form-control" name="password" autocomplete="current-password" required="" id="id_password" aria-describedby="emailHelp" placeholder="Enter password">
+         </div>
+
+
+
+        <button type="submit" value="POST/" class="btn btn-primary" >submit</button>
+
+
+         </div>
+
+
+          <div class="col-md-6">
+             <img src="../../media/images/reg.PNG " class="img-fluid" alt="Responsive image />
+
+
+
+    </form>
+
+{% endblock content%}

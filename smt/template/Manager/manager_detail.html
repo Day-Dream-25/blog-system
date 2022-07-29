@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+   <h2>you login as:{{ user.username }}</h2>
+
+    name:
+    <p>{{ object.name }}</p>
+
+
+    <button type="button"  id="submit">
+        <a href="{% url 'updatemanager' object.id %}">profile</a></button>
+
+    <button type="button" id="button">
+        <a href="{% url 'updateuser' object.id %}">User profile</a></button>
+
+    <br/>
+
+    <button type="button">
+        <a href="{% url 'supervisorlist' object.id %}">supervisor</a>
+        </button>
+
+
+
+    <br/>
+
+</body>
+</html>

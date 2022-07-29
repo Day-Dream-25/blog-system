@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1> {{ object.title }}</h1>
+
+        written by: {{ object.user }}<br/>
+        Date :{{ object.Date }} <br/>
+         <p>content :{{ object.description }}</p>
+
+        <br>
+    <br>
+   {%endblock content%}
